@@ -14,9 +14,6 @@ exports.sourceNodes = ({ actions, schema }) => {
     schema.buildObjectType({
       name: "Repro",
       interfaces: ["Node"],
-      extensions: {
-        infer: true,
-      },
       fields: {
         // this will return null
         field_that_needs_to_be_sanitized_: "String",
