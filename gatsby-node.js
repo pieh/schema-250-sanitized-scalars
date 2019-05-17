@@ -43,6 +43,18 @@ exports.createPages = async ({ graphql }) => {
     }
   `)
 
+  console.log("Results")
   console.log(data.repro)
+  console.log()
+  console.log("Expected results")
+  console.log({
+    field_that_needs_to_be_sanitized_: "foo",
+    _another__field_that_needs_to_be_sanitized: "bar",
+    _third_field_that_needs_to_be_sanitized: "baz",
+  })
+  console.log()
+  console.log(
+    '"field_that_needs_to_be_sanitized_" field resolves with "null" instead of value of "source[\'field_that_needs_to_be_sanitized?\']"'
+  )
   process.exit()
 }
